@@ -14,17 +14,16 @@ body {
 
 h1 {
     margin-top: 80px;
-    font-size: 55px; /* increased */
+    font-size: 55px;
 }
 
 #text {
-    font-size: 28px; /* increased */
+    font-size: 28px;
     margin: 20px;
     white-space: pre-line;
     line-height: 1.6;
 }
 
-/* Button */
 button {
     padding: 12px 25px;
     font-size: 18px;
@@ -35,7 +34,6 @@ button {
     cursor: pointer;
 }
 
-/* Hearts */
 .heart {
     position: absolute;
     color: red;
@@ -57,9 +55,10 @@ button {
 
 <div id="text"></div>
 
-<button onclick="surprise()">Click for Surprise 💌</button>
+<button onclick="playMusic()">Click for Surprise 💌</button>
 
-<audio autoplay loop>
+<!-- Music -->
+<audio id="music">
     <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
 </audio>
 
@@ -83,7 +82,8 @@ function typeEffect() {
 }
 typeEffect();
 
-function surprise() {
+function playMusic() {
+    document.getElementById("music").play();
     alert("I LOVE YOU SO MUCH ❤️🥺");
 }
 
