@@ -6,19 +6,45 @@
 <style>
 body {
     text-align: center;
-    background: linear-gradient(to right, pink, purple);
+    background: linear-gradient(to right, #ff758c, #7a5cff);
     color: white;
     font-family: Arial;
+    overflow: hidden;
 }
 
 h1 {
-    margin-top: 100px;
+    margin-top: 80px;
     font-size: 40px;
 }
 
-p {
+#text {
     font-size: 20px;
-    margin: 10px;
+    margin: 20px;
+    white-space: pre-line;
+}
+
+/* Button */
+button {
+    padding: 12px 25px;
+    font-size: 18px;
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* Hearts */
+.heart {
+    position: absolute;
+    color: red;
+    font-size: 20px;
+    animation: float 5s linear infinite;
+}
+
+@keyframes float {
+    0% {transform: translateY(0);}
+    100% {transform: translateY(-800px);}
 }
 </style>
 
@@ -28,21 +54,54 @@ p {
 
 <h1>Happy Birthday Nanna 😘🫂</h1>
 
-<p>After I fell in love with you, this is your first birthday with me 🫠</p>
-<p>After you came into my life, I truly started smiling 🤗</p>
-<p>The way you guide me in the toughest situations and the care you show me… I love it so much 😁</p>
-<p>No matter how many fights we have, let’s stay together like this for life… okay? ❤️</p>
+<div id="text"></div>
 
-<p>Thank you for always being there for me 💕</p>
-<p>Love you soooooo much Bngru 😘💗</p>
-<p><b>Forever yours, Ammulu ❤️</b></p>
+<button onclick="surprise()">Click for Surprise 💌</button>
 
-<button onclick="showMessage()">Click Me 💌</button>
+<!-- 🎵 Background Music -->
+<audio autoplay loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+</audio>
 
 <script>
-function showMessage() {
+let message = `After I fell in love with you, this is your first birthday with me 🫠
+After you came into my life, I truly started smiling 🤗
+The way you guide me in the toughest situations and the care you show me… I love it so much 😁
+No matter how many fights we have, let’s stay together like this for life… okay? ❤️
+
+Thank you for always being there for me 💕
+Love you soooooo much Bngru 😘💗
+Forever yours, Ammulu ❤️`;
+
+let i = 0;
+function typeEffect() {
+    if (i < message.length) {
+        document.getElementById("text").innerHTML += message.charAt(i);
+        i++;
+        setTimeout(typeEffect, 40);
+    }
+}
+typeEffect();
+
+/* Surprise */
+function surprise() {
     alert("I LOVE YOU SO MUCH ❤️🥺");
 }
+
+/* Hearts animation */
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.top = "100vh";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 5000);
+}
+setInterval(createHeart, 300);
 </script>
 
 </body>
