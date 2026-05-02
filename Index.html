@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Happy Birthday ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    text-align: center;
+    font-family: Arial;
+    background: black;
+    color: white;
+    overflow: hidden;
+}
+
+h1 {
+    margin-top: 120px;
+    font-size: 40px;
+}
+
+p {
+    font-size: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* Hearts animation */
+.heart {
+    position: absolute;
+    color: red;
+    font-size: 20px;
+    animation: float 5s linear infinite;
+}
+
+@keyframes float {
+    0% {transform: translateY(0);}
+    100% {transform: translateY(-800px);}
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>Happy Birthday My Love 🎂❤️</h1>
+<p>You are the most special person in my life 💕</p>
+<p>I’m so lucky to have you 💫</p>
+
+<button onclick="surprise()">Click for Surprise 💌</button>
+
+<script>
+function surprise() {
+    alert("I LOVE YOU SO MUCH ❤️🥺 Forever yours 💕");
+}
+
+/* Floating hearts */
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.top = "100vh";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 5000);
+}
+
+setInterval(createHeart, 300);
+</script>
+
+</body>
+  </html>
