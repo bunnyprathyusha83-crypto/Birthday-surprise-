@@ -5,44 +5,20 @@
 
 <style>
 body {
-    margin: 0;
     text-align: center;
-    font-family: Arial;
-    background: black;
+    background: linear-gradient(to right, pink, purple);
     color: white;
-    overflow: hidden;
+    font-family: Arial;
 }
 
 h1 {
-    margin-top: 120px;
+    margin-top: 100px;
     font-size: 40px;
 }
 
 p {
     font-size: 20px;
-}
-
-button {
-    padding: 10px 20px;
-    font-size: 18px;
-    background: red;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-/* Hearts animation */
-.heart {
-    position: absolute;
-    color: red;
-    font-size: 20px;
-    animation: float 5s linear infinite;
-}
-
-@keyframes float {
-    0% {transform: translateY(0);}
-    100% {transform: translateY(-800px);}
+    margin: 10px;
 }
 </style>
 
@@ -50,33 +26,24 @@ button {
 
 <body>
 
-<h1>Happy Birthday My Love 🎂❤️</h1>
-<p>You are the most special person in my life 💕</p>
-<p>I’m so lucky to have you 💫</p>
+<h1>Happy Birthday Nanna 😘🫂</h1>
 
-<button onclick="surprise()">Click for Surprise 💌</button>
+<p>After I fell in love with you, this is your first birthday with me 🫠</p>
+<p>After you came into my life, I truly started smiling 🤗</p>
+<p>The way you guide me in the toughest situations and the care you show me… I love it so much 😁</p>
+<p>No matter how many fights we have, let’s stay together like this for life… okay? ❤️</p>
+
+<p>Thank you for always being there for me 💕</p>
+<p>Love you soooooo much Bngru 😘💗</p>
+<p><b>Forever yours, Ammulu ❤️</b></p>
+
+<button onclick="showMessage()">Click Me 💌</button>
 
 <script>
-function surprise() {
-    alert("I LOVE YOU SO MUCH ❤️🥺 Forever yours 💕");
+function showMessage() {
+    alert("I LOVE YOU SO MUCH ❤️🥺");
 }
-
-/* Floating hearts */
-function createHeart() {
-    const heart = document.createElement("div");
-    heart.classList.add("heart");
-    heart.innerHTML = "❤️";
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.style.top = "100vh";
-    document.body.appendChild(heart);
-
-    setTimeout(() => {
-        heart.remove();
-    }, 5000);
-}
-
-setInterval(createHeart, 300);
 </script>
 
 </body>
-  </html>
+</html>
